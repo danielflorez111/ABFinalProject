@@ -20,6 +20,7 @@ export class ListComponent implements OnInit {
     matchConfirmed: true,
     matches: {},
   };
+
   userId:string;
   currentMatch:{} = {};
   currentMatchId:string;
@@ -44,7 +45,6 @@ export class ListComponent implements OnInit {
 
         this.previousMatchesInfo = this._usersService.getPreviousMatches(this.previousMatches);
       });
-
 
     });
     
