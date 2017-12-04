@@ -1,9 +1,9 @@
-<h3>Welcome {{ user.firstName }}</h3>
+<h3>Welcome</h3>
   {{ user | json }}
 <hr>
 
 
-<h3>Your current match is: {{ currentMatch.firstName }} {{ currentMatch.lastName }}</h3>
+<h3>Your current match is:</h3>
   {{ currentMatch | json }}
 <hr>
 
@@ -12,6 +12,6 @@
 <div>
   <ul *ngFor="let item of previousMatchesInfo">
     <li>{{ item | json}}</li>
-    <button>Detail</button>
+    <button class="">Detail</button>
   </ul>
 </div>
