@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsersService } from '../users.service';
+import { IUser } from '../user.interface';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +10,16 @@ import { UsersService } from '../users.service';
 })
 export class ListComponent implements OnInit {
 
-  users:any[] = [];
-
-  user:{} = {};
+  user:IUser = {
+    active: true,
+    currentMatch: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    location: 0,
+    matchConfirmed: true,
+    matches: {},
+  };
   userId:string;
   currentMatch:{} = {};
   currentMatchId:string;
@@ -20,11 +28,7 @@ export class ListComponent implements OnInit {
   
 
   constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute) {
-  /*  this._usersService.getUsers().subscribe(data => {
-      console.log(data);
-      this.users = data;
-    });*/
-    
+
     this.activatedRoute.params.subscribe(parametros => {
 
       this.userId = parametros['id'];

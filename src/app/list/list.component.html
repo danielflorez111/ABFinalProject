@@ -5,6 +5,7 @@
 
 <h3>Your current match is:</h3>
   {{ currentMatch | json }}
+  <button [routerLink]="['/detail', user.currentMatch]">Editar</button>
 <hr>
 
 
@@ -12,6 +13,6 @@
 <div>
   <ul *ngFor="let item of previousMatchesInfo">
     <li>{{ item | json}}</li>
-    <button class="">Detail</button>
+    <button [routerLink]="['/detail', item.id]">Editar</button>
   </ul>
 </div>

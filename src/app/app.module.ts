@@ -8,13 +8,15 @@ import { DetailComponent } from './detail/detail.component';
 
 import { AppRoutingModule } from './app.routes';
 import { UsersService } from './users.service';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
