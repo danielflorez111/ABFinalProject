@@ -40,9 +40,10 @@
   .fadeIn {
     animation-name: fadeIn;
   }
-  
 
-  
+
+
+
 
 
   /* Bordered form */
@@ -109,4 +110,10 @@ span.psw {
   .cancelbtn {
       width: 100%;
   }
+}
+
+
+nav {
+  background-color: #590044 !important;
+  color: white;
 }
