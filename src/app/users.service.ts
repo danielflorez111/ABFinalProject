@@ -29,6 +29,8 @@ export class UsersService {
   }
 
   getPreviousMatches(previousMatches:any) {
+
+    this.previousMatches = [];
     
     for(let i in previousMatches) {
       this.getUser(i).subscribe(match => {

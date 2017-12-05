@@ -150,9 +150,15 @@ nav {
 }
 
 .btn-1 {
-  background-image: linear-gradient(to right, #468494 0%, #235779 51%, #590044 100%);
+  background-image: linear-gradient(to right, #590044 0%, #235779 51%, #468494 100%);
 }
 
 .btn-2 {
   background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
 }
+
+.list-body {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+

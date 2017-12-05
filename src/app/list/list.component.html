@@ -1,44 +1,25 @@
 <div class="container main-container">
-  <h3>Welcome</h3>
-    {{ user | json }}
+  
+  <div class="button-container">
+    <a class="custom-btn btn-1" [routerLink]="['/detail', user.currentMatch]"> Compañero </a>
+  </div>
+  
+  <div class="button-container">
+    <a class="custom-btn btn-2"> Agenda </a>
+  </div>
+
   <hr>
-
-<div class="row">
-  <div class="button-container">
-    <a class="custom-btn btn-1" [routerLink]="['/detail', user.currentMatch]">Hover me</a>
-  </div>
-
-  <div class="button-container">
-    <a class="custom-btn btn-2">Hover me</a>
-  </div>
-</div>
-
-<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+  
+  <div class="list-group" *ngFor="let item of previousMatchesInfo">
+    <a [routerLink]="['/detail', item.id]" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
-      <a href="#" class="pull-left">
+      <a class="pull-left">
         <img src="https://www.spotteron.net/images/icons/user60.png" width="80" class="rounded-circle img-fluid">
       </a>
-      <div class="media-body">
-        <h4>Lorem Impsum</h4>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation...</p>
+      <div class="media-body list-body">
+        <h4> {{ item.firstName }} {{ item.lastName }} </h4>
+        <p> {{ item.email }} </p>
       </div>
     </div>
   </a>
-</div>
-
-
-  <h3>Your current match is:</h3>
-    {{ currentMatch | json }}
-    <button [routerLink]="['/detail', user.currentMatch]">Editar</button>
-  <hr>
-
-
-  <h3>These are your previous matches</h3>
-  <div>
-    <ul *ngFor="let item of previousMatchesInfo">
-      <li>{{ item | json}}</li>
-      <button [routerLink]="['/detail', item.id]">Editar</button>
-    </ul>
-  </div>
 </div>
