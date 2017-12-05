@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { IUser } from '../user.interface';
 import { Location } from '@angular/common';
 import { UsersService } from '../users.service';
 
@@ -10,8 +11,19 @@ import { UsersService } from '../users.service';
 })
 export class DetailComponent implements OnInit {
 
-  user:{} = {};
+  user:IUser = {
+    active: true,
+    currentMatch: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    location: 0,
+    matchConfirmed: true,
+    matches: {},
+  };
+
   userId:string;
+  stars:number = 4.5;
 
   constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute, private _location: Location) {
 

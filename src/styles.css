@@ -158,7 +158,7 @@ nav {
 }
 
 .list-body {
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: 10px;
 }
 
@@ -169,4 +169,13 @@ nav {
 .custom-list {
   border: 1px solid #468494;
   border-radius: 5px;
+}
+
+.star-icon[_ngcontent-c3]:before {
+  color: #590044 !important;
+}
+
+.btn-come-back {
+  color: white;
+  background-color: #590044;
 }

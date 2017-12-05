@@ -1,7 +1,28 @@
-<div class="container main-container animated fadeIn">
-  <pre>
-    {{ user | json }}
-  </pre>
+<div class="container animated fadeIn">
+  
+  <img src="./assets/profile.png" class="rounded mx-auto d-block" alt="...">
+  <hr>
+  
+  <div class="text-center">
 
-  <button (click)="comeBack()" >Regresar</button>
+    <h3> {{ user.firstName }} {{ user.lastName }} </h3>
+    <p> {{ user.email }}</p>
+    <rating [(ngModel)]="stars"></rating>
+    
+    <hr>
+    <h4>Intereses</h4>
+    <span class="badge badge-pill badge-secondary">Comics</span>
+    <span class="badge badge-pill badge-secondary">Series</span>
+    <span class="badge badge-pill badge-secondary">Fútbol</span>
+    <span class="badge badge-pill badge-secondary">Novelas</span>
+
+    <br>
+    <br>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <button (click)="comeBack()" class="btn btn-come-back">Regresar</button>
+
+  </div>
+  
 </div>

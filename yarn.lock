@@ -3600,6 +3600,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+ngx-rating@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/ngx-rating/-/ngx-rating-0.0.9.tgz#1c673d6e597642e430f980064be8571663b0fc16"
+
 no-case@^2.2.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
