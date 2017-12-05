@@ -7,6 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 
 
 const routes: Routes = [
+    { path: '', pathMatch:'full', redirectTo:'login' },
     { path: 'login', component: LoginComponent },
     { path: 'list/:id', component: ListComponent },
     { path: 'detail/:id', component: DetailComponent },

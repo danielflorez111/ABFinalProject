@@ -1,24 +1,28 @@
 <div class="container main-container">
-  
-  <div class="button-container animated fadeIn fast">
-    <a class="custom-btn btn-1" [routerLink]="['/detail', user.currentMatch]"> Compañero </a>
-  </div>
-  
-  <div class="button-container animated fadeIn fast">
-    <a class="custom-btn btn-2"> Agenda </a>
-  </div>
+
+  <div>
+    <div class="button-container animated fadeIn fast">
+      <a class="custom-btn btn-1" [routerLink]="['/detail', user.currentMatch]"> Compañero </a>
+    </div>
+    
+    <div class="button-container animated fadeIn fast">
+      <a class="custom-btn btn-2"> Agenda </a>
+    </div>
+</div>
   
   <hr>
   
   <div class="list-group animated fadeIn fast margin-top-20 custom-list" *ngFor="let item of previousMatchesInfo">
     <a [routerLink]="['/detail', item.id]" class="list-group-item list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
+
         <a class="pull-left">
-          <img src="assets/profile.png" width="80" class="rounded-circle img-fluid">
+          <img src="assets/profile.png" width="60" class="rounded-circle img-fluid">
         </a>
+
         <div class="media-body list-body">
-          <h4> {{ item.firstName }} {{ item.lastName }} </h4>
-          <p> {{ item.email }} </p>
+          <h5> {{ item.firstName }} {{ item.lastName }} </h5>
+          <small> {{ item.email }} </small>
         </div>
       </div>
     </a>
