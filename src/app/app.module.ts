@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { RatingModule } from "ngx-rating";
+import { Error404Component } from './shared/error404/error404.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RatingModule } from "ngx-rating";
     ListComponent,
     DetailComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

@@ -183,3 +183,7 @@ nav {
 .pill-color {
   background-color: #590044 !important;
 }
+
+.error-404 {
+  color: #590044;
+}
