@@ -11,7 +11,6 @@ import { IUser } from '../user.interface';
 export class ListComponent implements OnInit {
 
   user:IUser;
-
   userId:string;
   previousMatches:Object;
   previousMatchesInfo:IUser[];
