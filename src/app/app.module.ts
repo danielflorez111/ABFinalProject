@@ -9,6 +9,7 @@ import { DetailComponent } from './detail/detail.component';
 import { AppRoutingModule } from './app.routes';
 import { UsersService } from './users.service';
 import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     ListComponent,
     DetailComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
