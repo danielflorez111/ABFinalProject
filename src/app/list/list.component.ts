@@ -10,21 +10,11 @@ import { IUser } from '../user.interface';
 })
 export class ListComponent implements OnInit {
 
-  user:IUser = {
-    active: true,
-    currentMatch: "",
-    email: "",
-    firstName: "",
-    lastName: "",
-    location: 0,
-    matchConfirmed: true,
-    matches: {},
-  };
+  user:IUser;
 
   userId:string;
   previousMatches:Object;
   previousMatchesInfo:IUser[];
-  
 
   constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute) {
     this.activatedRoute.params.subscribe(parametros => {
