@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class DetailComponent implements OnInit {
   user:{} = {};
   userId:string;
 
-  constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute) {
+  constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute, private _location: Location) {
 
     this.activatedRoute.params.subscribe(parametros => {
       this.userId = parametros['id'];
@@ -24,6 +25,10 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  
+  comeBack() {
+    this._location.back();
   }
 
 }

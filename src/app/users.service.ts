@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { IUser } from './user.interface';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/Rx';
 
@@ -8,7 +9,7 @@ export class UsersService {
 
   usersURL:string;
   userURL:string;
-  previousMatches = [];
+  previousMatches:IUser[] = [];
 
   constructor(private http:Http) {
     this.usersURL = "https://shared-lunch.firebaseio.com/users.json";
@@ -20,16 +21,13 @@ export class UsersService {
       .map(res => res.json());
   }
   
-  getUser(id:string) {
+  getUser(id:string): Observable<any> {
     let url = `${ this.userURL }/${ id }.json`;
-    
     return this.http.get(url)
       .map(res => res.json());
-    
   }
 
-  getPreviousMatches(previousMatches:any) {
-
+  getPreviousMatches(previousMatches:any): IUser[] {
     this.previousMatches = [];
     
     for(let i in previousMatches) {

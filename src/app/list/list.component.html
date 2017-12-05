@@ -1,26 +1,27 @@
 <div class="container main-container">
   
-  <div class="button-container">
+  <div class="button-container animated fadeIn fast">
     <a class="custom-btn btn-1" [routerLink]="['/detail', user.currentMatch]"> Compañero </a>
   </div>
   
-  <div class="button-container">
+  <div class="button-container animated fadeIn fast">
     <a class="custom-btn btn-2"> Agenda </a>
   </div>
-
+  
   <hr>
   
-  <div class="list-group" *ngFor="let item of previousMatchesInfo">
+  <div class="list-group animated fadeIn fast margin-top-20 custom-list" *ngFor="let item of previousMatchesInfo">
     <a [routerLink]="['/detail', item.id]" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <a class="pull-left">
-        <img src="https://www.spotteron.net/images/icons/user60.png" width="80" class="rounded-circle img-fluid">
-      </a>
-      <div class="media-body list-body">
-        <h4> {{ item.firstName }} {{ item.lastName }} </h4>
-        <p> {{ item.email }} </p>
+      <div class="d-flex w-100 justify-content-between">
+        <a class="pull-left">
+          <img src="assets/profile.png" width="80" class="rounded-circle img-fluid">
+        </a>
+        <div class="media-body list-body">
+          <h4> {{ item.firstName }} {{ item.lastName }} </h4>
+          <p> {{ item.email }} </p>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
+
 </div>
-danie
