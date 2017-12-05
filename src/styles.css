@@ -179,3 +179,7 @@ nav {
   color: white;
   background-color: #590044;
 }
+
+.pill-color {
+  background-color: #590044 !important;
+}
