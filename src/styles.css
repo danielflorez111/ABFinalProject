@@ -171,7 +171,7 @@ nav {
   border-radius: 5px;
 }
 
-.star-icon[_ngcontent-c3]:before {
+.star-icon:before {
   color: #590044 !important;
 }
 
