@@ -6,19 +6,26 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class UsersService {
-
-  url:string;
+  
+  usersURL:string;
+  userURL:string;
 
   constructor(private http:HttpClient) {
-    this.url = "https://shared-lunch.firebaseio.com/users.json";
+    this.usersURL = "https://shared-lunch.firebaseio.com/users.json";
+    this.userURL = "https://shared-lunch.firebaseio.com/users";
   }
   
   getUser(id:string): Observable<any> {
+    let url = `${ this.userURL }/${ id }.json`;
+    return this.http.get(url);
+  }
+  
+  getUserMatches(id:string): Observable<any> {
     let user:IUser;
     let match:IUser;
     let matches:IUser[] = [];
     
-    return this.http.get(this.url).map(users => {
+    return this.http.get(this.usersURL).map(users => {
       user = users[id];
       
       for(let i in user.matches) {

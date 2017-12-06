@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
   constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute) {
     this.activatedRoute.params.subscribe(parametros => {
       this.userId = parametros['id'];
-      this._usersService.getUser(this.userId).subscribe(data => {
+      this._usersService.getUserMatches(this.userId).subscribe(data => {
         this.user = data.user;
         this.matches = data.matches;
       });
