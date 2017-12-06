@@ -1,6 +1,6 @@
 <div class="container main-container">
 
-  <div>
+  <div *ngIf="user.currentMatch != ''">
     <div class="button-container animated fadeIn fast">
       <a class="custom-btn btn-1" [routerLink]="['/detail', user.currentMatch]"> Compañero </a>
     </div>

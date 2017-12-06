@@ -31,7 +31,7 @@ export class ListComponent implements OnInit {
         this.user = data.user;
         this.matches = data.matches;
       });
-    });  
+    });
   }
 
   ngOnInit() {
