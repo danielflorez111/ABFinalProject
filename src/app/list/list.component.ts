@@ -22,25 +22,19 @@ export class ListComponent implements OnInit {
   };
   
   userId:string;
-  previousMatches:Object;
-  previousMatchesInfo:IUser[];
+  matches:IUser[];
 
   constructor(private _usersService:UsersService, private router:Router, private activatedRoute:ActivatedRoute) {
     this.activatedRoute.params.subscribe(parametros => {
       this.userId = parametros['id'];
-      this._usersService.getUser(this.userId).subscribe(user => {
-        this.user = user;
-        this.previousMatches = user.matches;
-        this.previousMatchesInfo = this._usersService.getPreviousMatches(this.previousMatches);
+      this._usersService.getUser(this.userId).subscribe(data => {
+        this.user = data.user;
+        this.matches = data.matches;
       });
     });  
   }
 
   ngOnInit() {
-  }
-
-  test() {
-    this._usersService.test(this.userId);
   }
 
 }
