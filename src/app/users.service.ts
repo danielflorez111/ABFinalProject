@@ -6,7 +6,9 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class UsersService {
-  
+
+  user:IUser;
+  matches:IUser[] = [];
   usersURL:string;
   userURL:string;
 
@@ -20,21 +22,31 @@ export class UsersService {
     return this.http.get(url);
   }
   
+  getUserDetail(id:string): IUser {
+    return this.matches.filter(user => user.id === id)[0];
+  }
+  
   getUserMatches(id:string): Observable<any> {
-    let user:IUser;
+    this.matches = [];
     let match:IUser;
-    let matches:IUser[] = [];
+    let currentMatch:IUser;
     
     return this.http.get(this.usersURL).map(users => {
-      user = users[id];
+      this.user = users[id];
       
-      for(let i in user.matches) {
+      for(let i in this.user.matches) {
         match = users[i];
         match['id'] = i;
-        matches.push(match);
+        this.matches.push(match);
       }
       
-      return {user, matches};
+      if(this.user.currentMatch) {
+        currentMatch = users[this.user.currentMatch];
+        currentMatch['id'] = this.user.currentMatch;
+        this.matches.push(currentMatch);
+      }
+      
+      return {user:this.user, matches: this.matches};
     });
   }
 

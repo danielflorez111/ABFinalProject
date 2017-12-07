@@ -29,9 +29,7 @@ export class DetailComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(parametros => {
       this.userId = parametros['id'];
-      this._usersService.getUser(this.userId).subscribe(user => {
-        this.user = user;
-      });
+      this.user = this._usersService.getUserDetail(this.userId);
     });
     
   }
